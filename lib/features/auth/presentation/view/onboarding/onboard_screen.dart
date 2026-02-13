@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:templates/utils/style.dart';
-import 'onboarding_data.dart';
-import 'package:templates/features/app/components/onboarding_indicator.dart';
-import 'package:templates/features/app/components/onboarding_page.dart';
-import 'package:templates/features/app/components/onboarding_text.dart';
-import 'package:templates/features/app/components/onboarding_button.dart';
-import 'package:templates/features/app/view/personalize_screen.dart';
+import 'package:templates/features/auth/presentation/widgets/onboarding_button.dart';
+import 'package:templates/features/auth/presentation/widgets/onboarding_page.dart';
+import 'package:templates/features/auth/presentation//widgets/onboarding_text.dart';
+import 'package:templates/features/auth/presentation/view/personalize_screen.dart';
+import 'package:templates/features/auth/presentation/view/onboarding/onboarding_data.dart';
+import 'package:templates/features/auth/presentation/widgets/onboarding_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -36,7 +35,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.theme.primaryColor,
       body: SafeArea(
         child: Column(
           children: [

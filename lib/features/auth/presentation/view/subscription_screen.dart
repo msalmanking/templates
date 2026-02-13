@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:templates/core/constants/app_dimensions.dart';
 
-import 'package:templates/utils/style.dart';
-import 'package:templates/widgets/primary_button.dart';
-import 'package:templates/features/app/view/setting_screen.dart';
-import 'package:templates/helper/navigation_helper.dart';
+import 'package:templates/core/utils/style.dart';
+import 'package:templates/core/widgets/primary_button.dart';
+import 'package:templates/features/setting/presentation/view/setting_screen.dart';
+import 'package:templates/core/helper/navigation_helper.dart';
 
 class SubscriptionScreen extends StatefulWidget {
   const SubscriptionScreen({super.key});
@@ -19,10 +20,9 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.theme.primaryColor,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 24.sp),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -38,21 +38,21 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                 ],
               ),
 
-              SizedBox(height: 12.h),
+              SizedBox(height: 12.sp),
 
               Text(
                 'Choose your subscription plan',
                 style: headlineMedium(context, fontWeight: FontWeight.w900),
               ),
 
-              SizedBox(height: 10.h),
+              SizedBox(height: 10.sp),
 
               Text(
                 'And get a 7-day free trial',
-                style: titleMedium(context, color: context.theme.hintColor),
+                style: bodyLarge(context, color: context.theme.hintColor),
               ),
 
-              SizedBox(height: 24.h),
+              SizedBox(height: 24.sp),
 
               _planTile(
                 index: 0,
@@ -77,7 +77,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                 subtitle: 'every week',
               ),
 
-              SizedBox(height: 24.h),
+              SizedBox(height: 24.sp),
 
               _benefitsSection(),
 
@@ -85,7 +85,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
 
               PrimaryButton(text: 'Subscribe', onPressed: () {}),
 
-              SizedBox(height: 16.h),
+              SizedBox(height: 16.sp),
             ],
           ),
         ),
@@ -101,18 +101,17 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     String? discount,
   }) {
     final isSelected = selectedIndex == index;
-
     return GestureDetector(
       onTap: () => setState(() => selectedIndex = index),
       child: Container(
-        margin: EdgeInsets.only(bottom: 12.h),
-        padding: EdgeInsets.all(16.w),
+        margin: EdgeInsets.only(bottom: 12.sp),
+        padding: EdgeInsets.all(16.sp),
         decoration: BoxDecoration(
           color: isSelected
               ? context.theme.primaryColorLight
               : context.theme.primaryColor,
 
-          borderRadius: BorderRadius.circular(14.r),
+          borderRadius: BorderRadius.circular(AppDimensions.radiusLarge.sp),
           border: Border.all(
             color: isSelected
                 ? context.theme.primaryColorLight
@@ -125,22 +124,22 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
               isSelected ? Icons.radio_button_checked : Icons.radio_button_off,
               color: context.theme.primaryColorDark,
             ),
-            SizedBox(width: 12.w),
+            SizedBox(width: 12.sp),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: titleMedium(context, fontWeight: FontWeight.w700),
                   ),
                   if (discount != null)
                     Text(
                       discount,
-                      style: TextStyle(fontSize: 12.sp, color: Colors.blue),
+                      style: labelMedium(
+                        context,
+                        color: context.theme.primaryColorDark,
+                      ),
                     ),
                 ],
               ),
@@ -150,14 +149,11 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
               children: [
                 Text(
                   price,
-                  style: TextStyle(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  style: titleMedium(context, fontWeight: FontWeight.w700),
                 ),
                 Text(
                   subtitle,
-                  style: TextStyle(fontSize: 12.sp, color: Colors.grey),
+                  style: bodySmall(context, color: context.theme.hintColor),
                 ),
               ],
             ),
@@ -172,14 +168,14 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
       padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
         color: Colors.grey.shade100,
-        borderRadius: BorderRadius.circular(14.r),
+        borderRadius: BorderRadius.circular(AppDimensions.radiusMedium.sp),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "You'll get:",
-            style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w700),
+            style: titleMedium(context, fontWeight: FontWeight.w700),
           ),
           SizedBox(height: 12.h),
           _benefitItem('Unlimited access'),
@@ -192,11 +188,11 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
 
   Widget _benefitItem(String text) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 8.h),
+      padding: EdgeInsets.only(bottom: 8.sp),
       child: Row(
         children: [
           const Icon(Icons.star, color: Colors.blue, size: 18),
-          SizedBox(width: 8.w),
+          SizedBox(width: 8.sp),
           Text(text, style: TextStyle(fontSize: 14.sp)),
         ],
       ),

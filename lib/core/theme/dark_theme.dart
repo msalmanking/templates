@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:templates/utils/colors.dart';
+import 'package:templates/core/constants/colors.dart';
 
 // import 'package:hamdardgo/core/theme/src/dropdown_theme.dart';
 // import 'package:hamdardgo/core/utils/colors.dart';

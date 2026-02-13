@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:templates/utils/colors.dart';
-import 'package:templates/utils/style.dart';
+import 'package:templates/core/constants/colors.dart';
 
 class PrimaryButton extends StatefulWidget {
   final VoidCallback onPressed;
@@ -27,7 +26,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 330.w,
+      width: double.infinity,
       height: widget.height ?? 50.h,
       child: ElevatedButton(
         onPressed: widget.onPressed,
@@ -39,11 +38,10 @@ class _PrimaryButtonState extends State<PrimaryButton> {
         ),
         child: Text(
           widget.text,
-          style: labelLarge(
-            context,
-
+          style: TextStyle(
+            fontSize: 16.sp,
             fontWeight: FontWeight.w600,
-            color: context.theme.primaryColor,
+            color: Colors.white,
           ),
         ),
       ),

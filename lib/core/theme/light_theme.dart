@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:templates/utils/colors.dart';
+import 'package:templates/core/constants/colors.dart';
 
 ThemeData light(BuildContext context) => ThemeData(
   fontFamily: 'Poppins',

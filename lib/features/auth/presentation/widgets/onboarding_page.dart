@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:templates/utils/images.dart';
+import 'package:templates/core/constants/images.dart';
 
 class OnboardingPageView extends StatelessWidget {
   final PageController controller;

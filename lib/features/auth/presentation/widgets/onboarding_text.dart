@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:templates/utils/style.dart';
+import 'package:templates/core/utils/style.dart';
 
 class OnboardingText extends StatelessWidget {
   final String title;
@@ -15,7 +15,7 @@ class OnboardingText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 24.sp),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -23,7 +23,7 @@ class OnboardingText extends StatelessWidget {
             title,
             style: headlineSmall(context, fontWeight: FontWeight.w900),
           ),
-          SizedBox(height: 15.h),
+          SizedBox(height: 15.sp),
           Text(
             description,
             style: labelMedium(

@@ -30,7 +30,7 @@ const Color disabledColorLight = Color(0xFF858585);
 Color disabledColorDark = const Color(0xFFB0B0B0);
 
 // hint colors
-const Color hintColorLight = Color(0xff90A3BF);
+const Color hintColorLight = Color(0xFF909090);
 const Color hintColorDark = Color(0xFF909090);
 
 // text colors
